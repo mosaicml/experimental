@@ -3,9 +3,10 @@ import json
 from composer.trainer import TrainerHparams
 import logging
 import os
+from typing import List
 
 
-def register_all_algorithms():
+def register_all_algorithms() -> List[str]:
     """
     Registers every algorithm in the folder with the
     trainer hparams using the associated metadata. Assumes that:
@@ -16,8 +17,7 @@ def register_all_algorithms():
 
     root_folder = os.path.split(__file__)[0]
     subfolders = [f.path for f in os.scandir(root_folder) if f.is_dir()]
-
-    logging.debug(f"Found {len(subfolders)} algorithm folders.")
+    folder_names = [os.path.split(f)[-1] for f in subfolders]
 
     for folder in subfolders:
         metadata_path = os.path.join(folder, 'metadata.json')
@@ -37,5 +37,5 @@ def register_all_algorithms():
             class_key=algorithm_name,
         )
 
-
-register_all_algorithms()
+    logging.info(f"Registered {len(subfolders)} algorithms: {folder_names}")
+    return folder_names
