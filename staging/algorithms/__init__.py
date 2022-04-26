@@ -7,6 +7,12 @@ from typing import List
 from composer.trainer import TrainerHparams
 
 
+def is_algorithm_folder(f) -> bool:
+    """Exclude directories that start with _ or ."""
+    folder_name = os.path.basename(f.path)
+    return f.is_dir() and not folder_name.startswith('_') and not folder_name.startswith('.')
+
+
 def register_all_algorithms() -> List[str]:
     """Registers every algorithm in the folder with the trainer hparams using the associated metadata. Assumes that:
 
@@ -16,8 +22,8 @@ def register_all_algorithms() -> List[str]:
     """
 
     root_folder = os.path.split(__file__)[0]
-    subfolders = [f.path for f in os.scandir(root_folder) if f.is_dir()]
-    folder_names = [os.path.split(f)[-1] for f in subfolders]
+    subfolders = [f.path for f in os.scandir(root_folder) if is_algorithm_folder(f)]
+    algorithm_names = [os.path.split(f)[-1] for f in subfolders]
 
     for folder in subfolders:
         metadata_path = os.path.join(folder, 'metadata.json')
@@ -37,5 +43,5 @@ def register_all_algorithms() -> List[str]:
             class_key=algorithm_name,
         )
 
-    logging.info(f"Registered {len(subfolders)} algorithms: {folder_names}")
-    return folder_names
+    logging.info(f"Registered {len(subfolders)} algorithms: {algorithm_names}")
+    return algorithm_names
