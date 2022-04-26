@@ -22,7 +22,4 @@ lint:
 test:
 	$(PYTHON) -m $(PYTEST) $(EXTRA_ARGS)
 
-clean-notebooks:
-	$(PYTHON) scripts/clean_notebooks.py -i notebooks/*.ipynb
-
-.PHONY: test lint style clean-notebooks
+.PHONY: test lint style 
