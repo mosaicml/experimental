@@ -1,8 +1,6 @@
-import staging
-import pytest
 from composer.trainer import TrainerHparams
-from composer.models import ResNetCIFARHparams
-from composer.datasets import CIFAR10DatasetHparams, DataLoaderHparams
+
+import staging
 
 
 def test_register_algorithms():

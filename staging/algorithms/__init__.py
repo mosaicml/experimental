@@ -1,15 +1,15 @@
 import importlib
 import json
-from composer.trainer import TrainerHparams
 import logging
 import os
 from typing import List
 
+from composer.trainer import TrainerHparams
+
 
 def register_all_algorithms() -> List[str]:
-    """
-    Registers every algorithm in the folder with the
-    trainer hparams using the associated metadata. Assumes that:
+    """Registers every algorithm in the folder with the trainer hparams using the associated metadata. Assumes that:
+
     - ``metadata.json`` has the ``hparams`` and ``hparams_key`` keys.
     - the hparams object is importable. e.g.
       from staging.algorithms.example_algorithm import ExampleAlgorithmHparams

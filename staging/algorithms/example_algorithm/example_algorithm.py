@@ -1,8 +1,10 @@
-from composer import Algorithm, Event, State
-from composer.loggers import Logger
+from dataclasses import dataclass
 from typing import Optional
-from composer.algorithms import AlgorithmHparams
+
 import yahp as hp
+from composer import Algorithm, Event, State
+from composer.algorithms import AlgorithmHparams
+from composer.loggers import Logger
 
 
 class ExampleAlgorithm(Algorithm):
@@ -18,9 +20,10 @@ class ExampleAlgorithm(Algorithm):
         pass
 
 
+@dataclass
 class ExampleAlgorithmHparams(AlgorithmHparams):
 
     alpha: float = hp.optional('alpha factor', default=0.1)
 
     def initialize_object(self) -> ExampleAlgorithm:
-        return ExampleAlgorithm(float=self.float)
+        return ExampleAlgorithm(alpha=self.alpha)
