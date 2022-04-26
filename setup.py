@@ -1,6 +1,7 @@
 # Copyright 2021 MosaicML. All Rights Reserved.
 
 import os
+
 import setuptools
 from setuptools import setup
 
