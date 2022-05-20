@@ -4,7 +4,7 @@ PYTEST ?= pytest  # Pytest command
 PYRIGHT ?= pyright  # Pyright command. Pyright must be installed seperately -- e.g. `node install -g pyright`
 EXTRA_ARGS ?=  # extra arguments for pytest
 
-dirs := staging tests
+dirs := experimental tests
 
 # run this to autoformat your code
 style:
@@ -22,4 +22,4 @@ lint:
 test:
 	$(PYTHON) -m $(PYTEST) $(EXTRA_ARGS)
 
-.PHONY: test lint style 
+.PHONY: test lint style

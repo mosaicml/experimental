@@ -16,7 +16,7 @@ def package_files(prefix: str, directory: str, extension: str):
     return paths
 
 
-data_files = package_files("staging", "algorithms", ".json")
+data_files = package_files("experimental", "algorithms", ".json")
 
 install_requires = [
     "mosaicml==0.6.0",
@@ -32,15 +32,15 @@ install_requires = [
 ]
 
 setup(
-    name="staging",
+    name="experimental",
     version="0.0.1",
     author="MosaicML",
     author_email="team@mosaicml.com",
-    description="Staging repo for algorithms",
-    url="https://github.com/mosaicml/staging",
+    description="Experimental and third-party algorithms",
+    url="https://github.com/mosaicml/experimental",
     include_package_data=True,
     package_data={
-        "staging": data_files,
+        "experimental": data_files,
     },
     packages=setuptools.find_packages(exclude=["tests*"]),
     classifiers=[

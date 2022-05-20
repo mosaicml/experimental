@@ -18,7 +18,7 @@ def register_all_algorithms() -> List[str]:
 
     - ``metadata.json`` has the ``hparams`` and ``hparams_key`` keys.
     - the hparams object is importable. e.g.
-      from staging.algorithms.example_algorithm import ExampleAlgorithmHparams
+      from experimental.algorithms.example_algorithm import ExampleAlgorithmHparams
     """
 
     root_folder = os.path.split(__file__)[0]
@@ -36,7 +36,7 @@ def register_all_algorithms() -> List[str]:
             metadata = json.load(f)
             hparams_class = metadata[algorithm_name]['hparams']
 
-        cls = getattr(importlib.import_module(name=f"staging.algorithms.{algorithm_name}"), hparams_class)
+        cls = getattr(importlib.import_module(name=f"experimental.algorithms.{algorithm_name}"), hparams_class)
         TrainerHparams.register_class(
             field="algorithms",
             register_class=cls,

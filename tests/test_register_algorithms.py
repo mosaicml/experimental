@@ -1,10 +1,10 @@
 from composer.trainer import TrainerHparams
 
-import staging
+import experimental
 
 
 def test_register_algorithms():
-    algo_names = staging.algorithms.register_all_algorithms()
+    algo_names = experimental.algorithms.register_all_algorithms()
 
     for algo in algo_names:
         assert algo in TrainerHparams.hparams_registry["algorithms"]
