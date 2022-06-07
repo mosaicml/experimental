@@ -1,13 +1,13 @@
 # experimental
 
-`experimental` is a repository of algorithms that are either third-party contributions, or not sufficiently mature to contribute into `Composer`. 
+`experimental` is a repository of algorithms that are either third-party contributions, or not sufficiently mature to contribute into `Composer`.
 
 ## Adding algorithms
 
 To add an algorithm to `experimental`, create a folder under `experimental/algorithms`, with the following files:
-* `__init__.py` that imports your algorithm class 
+* `__init__.py` that imports your algorithm class
 * `metadata.json` with some metadata for your algorithm. See [metadata.json](https://github.com/mosaicml/experimental/blob/main/experimental/algorithms/example_algorithm/metadata.json) for the schema.
-* `*.py` with your code! 
+* `*.py` with your code!
 
 ## Using experimental
 
@@ -23,7 +23,8 @@ trainer = Trainer(
 )
 ```
 
-To use experimental with YAPH and our YAML config files, in your entrypoint code, call `register_all_algorithms()`, after which the algorithms will be accessible through our config file system:
+To use experimental with YAPH and our YAML config files, in your entrypoint code, call `register_all_algorithms()`, after which the algorithms will be accessible through YAHP, our
+config management library.
 
 ```python
 import experimental

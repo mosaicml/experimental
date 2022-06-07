@@ -10,7 +10,6 @@
             "nlp"
         ],
         "summary": "Just an Example",
-        "use": "Just an Example",
-        "hparams": "ExampleAlgorithmHparams"
+        "use": "Just an Example"
     }
 }
