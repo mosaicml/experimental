@@ -1,10 +1,13 @@
 # experimental
 
-`experimental` is a repository of algorithms that not quite ready for merging into Composer, either they are working implementions of algorithms we'd like to share with the community, or not quite proven yet in our experiments.
+`experimental` is a repository of algorithms that are either third-party contributions, or not sufficiently mature to contribute into `Composer`. 
 
 ## Adding algorithms
 
-To add an algorithm to `experimental`, see the `example_algorithm` folder. Importantly, provide a `metadata.json`. The `hparams` key in the `metadata` will be used by YAPH to register the hparams object with the YAHP configuration manager.
+To add an algorithm to `experimental`, create a folder under `algorithms`, with the following files:
+* `__init__.py` that imports your algorithm class 
+* `metadata.json` with some metadata for your algorithm. See [metadata.json](https://github.com/mosaicml/experimental/blob/main/experimental/algorithms/example_algorithm/metadata.json) for the schema.
+* `*.py` with your code! 
 
 ## Using experimental
 
@@ -31,4 +34,10 @@ trainer = TrainerHparams.create(f="my_yaml_file.yaml")
 trainer.fit()
 ```
 
+The key in your YAML file is the folder name of the algorithm:
+```
+algorithms:
+  - example_algorithm:
+    alpha: 0.1
+```
 
