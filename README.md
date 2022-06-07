@@ -4,7 +4,7 @@
 
 ## Adding algorithms
 
-To add an algorithm to `experimental`, create a folder under `algorithms`, with the following files:
+To add an algorithm to `experimental`, create a folder under `experimental/algorithms`, with the following files:
 * `__init__.py` that imports your algorithm class 
 * `metadata.json` with some metadata for your algorithm. See [metadata.json](https://github.com/mosaicml/experimental/blob/main/experimental/algorithms/example_algorithm/metadata.json) for the schema.
 * `*.py` with your code! 
