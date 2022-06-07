@@ -19,7 +19,7 @@ def package_files(prefix: str, directory: str, extension: str):
 data_files = package_files("experimental", "algorithms", ".json")
 
 install_requires = [
-    # "mosaicml==0.7.0",
+    "mosaicml>=0.7.1",
     "pytest==7.1.0",
     "toml==0.10.2",
     "yapf==0.32.0",
@@ -35,7 +35,7 @@ setup(
     name="experimental",
     version="0.0.1",
     author="MosaicML",
-    author_email="team@mosaicml.com",
+    author_email="hanlin@mosaicml.com",
     description="Experimental and third-party algorithms",
     url="https://github.com/mosaicml/experimental",
     include_package_data=True,
