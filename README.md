@@ -11,6 +11,8 @@ To add an algorithm to `experimental`, create a folder `experimental/algorithms/
 
 Lastly, add your algorithm to the top-level import in `experimental/algorithms/__init__.py`.
 
+For an example, see [ExampleAlgorithm](https://github.com/mosaicml/experimental/tree/main/experimental/algorithms/example_algorithm).
+
 ## Using experimental
 
 To use experimental in your code, simply import the library and use with your trainer:
