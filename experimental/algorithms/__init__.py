@@ -6,6 +6,12 @@ from typing import List
 
 from composer.algorithms.algorithm_hparams_registry import algorithm_registry
 
+from experimental.algorithms.example_algorithm import ExampleAlgorithm
+
+__all__ = [
+    "ExampleAlgorithm",
+]
+
 
 def is_algorithm_folder(f) -> bool:
     """Exclude directories that start with _ or ."""
