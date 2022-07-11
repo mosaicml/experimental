@@ -19,7 +19,7 @@ def package_files(prefix: str, directory: str, extension: str):
 data_files = package_files("experimental", "algorithms", ".json")
 
 install_requires = [
-    "mosaicml>=0.7.0",
+    "mosaicml>=0.8.0",
     "pytest==7.1.0",
     "toml==0.10.2",
     "yapf==0.32.0",
