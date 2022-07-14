@@ -32,7 +32,7 @@ install_requires = [
 ]
 
 setup(
-    name="experimental",
+    name="mosaicml-experimental",
     version="0.0.1",
     author="MosaicML",
     author_email="team@mosaicml.com",

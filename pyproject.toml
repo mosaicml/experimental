@@ -8,9 +8,8 @@ skip = [ "env", "wandb", "runs", "build", "node_modules" ]
 # Pyright
 [tool.pyright]
 include = [
-    "composer/**",
+    "experimental/**",
     "tests/**",
-    "examples/**",
 ]
 exclude = [
     "build/**",

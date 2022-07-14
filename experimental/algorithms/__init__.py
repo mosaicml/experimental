@@ -7,7 +7,7 @@ from typing import List
 from composer.algorithms.algorithm_hparams_registry import algorithm_registry
 
 
-def is_algorithm_folder(f) -> bool:
+def is_algorithm_folder(f: os.DirEntry) -> bool:
     """Exclude directories that start with _ or ."""
     folder_name = os.path.basename(f.path)
     return f.is_dir() and not folder_name.startswith('_') and not folder_name.startswith('.')
