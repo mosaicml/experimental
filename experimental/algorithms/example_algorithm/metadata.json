@@ -1,15 +1,7 @@
 {
-    "example_algorithm": {
-        "name": "Example Algorithm",
-        "class_name": "ExampleAlgorithm",
-        "functional": "",
-        "tldr": "Just an Example",
-        "attribution": "(Example et al, 2022)",
-        "link": "",
-        "domains": [
-            "nlp"
-        ],
-        "summary": "Just an Example",
-        "use": "Just an Example"
-    }
+    "name": "Example Algorithm",
+    "class_name": "ExampleAlgorithm",
+    "tldr": "Just an Example",
+    "attribution": "(Example et al, 2022)",
+    "link": ""
 }

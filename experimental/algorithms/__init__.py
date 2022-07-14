@@ -6,12 +6,6 @@ from typing import List
 
 from composer.algorithms.algorithm_hparams_registry import algorithm_registry
 
-from experimental.algorithms.example_algorithm import ExampleAlgorithm
-
-__all__ = [
-    "ExampleAlgorithm",
-]
-
 
 def is_algorithm_folder(f) -> bool:
     """Exclude directories that start with _ or ."""
@@ -44,7 +38,7 @@ def register_all_algorithms() -> List[str]:
 
         with open(metadata_path, 'r') as f:
             metadata = json.load(f)
-            class_name = metadata[algorithm_name]['class_name']
+            class_name = metadata['class_name']
 
         # import the algorithm class and add to the algorithm registry
         cls = getattr(
